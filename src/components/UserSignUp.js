@@ -1,5 +1,6 @@
 import React from 'react'
 import {ROOT} from '../constants'
+import { Button, Form, Grid, Image, Message, Segment, Row} from 'semantic-ui-react'
 
 class UserSignUp extends React.Component {
     state = {
@@ -51,9 +52,9 @@ class UserSignUp extends React.Component {
                     <input type="text" name="password" autoComplete="off" value={password} onChange={this.handleChange} />
                     
                 </form>
-            <div>
+            <Message>
                 <a href='#' onClick={this.props.handleClick}> Sign Up </a> as Instructor
-            </div>
+            </Message>
                 
             </div>
         )

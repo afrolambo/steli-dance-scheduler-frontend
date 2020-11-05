@@ -1,5 +1,7 @@
 import React from 'react'
 import {ROOT} from '../constants'
+import { Button, Form, Grid, Image, Message, Segment, Row} from 'semantic-ui-react'
+
 
 class InstructorSignUp extends React.Component {
     state = {
@@ -62,9 +64,9 @@ class InstructorSignUp extends React.Component {
                 
             </form>
 
-            <div>
+            <Message>
                 <a href='#' onClick={this.props.handleClick}> Sign Up </a> as New User
-            </div>
+            </Message>
                 
             </div>
         )

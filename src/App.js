@@ -8,6 +8,7 @@ import SignUpContainer from './containers/SignUpContainer'
 import NavBar from './components/Navbar'
 import {Route, Switch, Redirect} from 'react-router-dom'
 import './App.css';
+import 'semantic-ui-css/semantic.min.css'
 
 
 class App extends React.Component {

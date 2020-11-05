@@ -5,7 +5,7 @@ import InstructorSignUp from '../components/UserSignUp'
 
 class SignUpContainer extends React.Component {
     state = {
-        newUser: true
+        newUser: false
     }
 
     handleClick = () => {
