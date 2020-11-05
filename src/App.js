@@ -4,7 +4,7 @@ import {About} from './views/About'
 import {Cart} from './views/Cart'
 import {NoMatch} from './views/NoMatch'
 import {Schedule} from './views/Schedule'
-import SignUpContainer from './containers/SignUpContainer'
+import AuthContainer from './containers/AuthContainer'
 import NavBar from './components/Navbar'
 import {Route, Switch, Redirect} from 'react-router-dom'
 import './App.css';
@@ -32,8 +32,8 @@ class App extends React.Component {
           <Route exact path='/'>
             <Redirect to="/Home" />
           </Route>
-          <Route path="/SignUpContainer">
-            <SignUpContainer handleLogin={this.handleLogin} />
+          <Route path="/AuthContainer">
+            <AuthContainer handleLogin={this.handleLogin} />
           </Route>
           <Route exact path="/About" component={About} />
           <Route exact path="/Cart" component={Cart} />

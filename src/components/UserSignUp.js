@@ -32,31 +32,37 @@ class UserSignUp extends React.Component {
 
     render() {
         const { username, fname, lname, password, email } = this.state
+        console.log(this.props)
         
         return(
-            <div>
-                <form onSubmit ={this.handleSubmit}>
-                    <label>Username</label>
-                    <input type="text" name="username" autoComplete="off" value={username} onChange={this.handleChange} />
+            <Grid textAlign="center" style={{ height: `100vh` }} verticalAlign="middle">
 
-                    <label>First Name</label>
-                    <input type="text" name="fname" autoComplete="off" value={fname} onChange={this.handleChange} />
+                <div>
+                    <Form size='large' style={{maxWidth: 600}} onSubmit={this.handleSubmit}>
+                        <Segment stacked>
+                            <label>Username</label>
+                            <input type="text" name="username" autoComplete="off" value={username} onChange={this.handleChange} />
 
-                    <label>Last Name</label>
-                    <input type="text" name="lname" autoComplete="off" value={lname} onChange={this.handleChange} />
+                            <label>First Name</label>
+                            <input type="text" name="fname" autoComplete="off" value={fname} onChange={this.handleChange} />
 
-                    <label>email</label>
-                    <input type="text" name="email" autoComplete="off" value={email} onChange={this.handleChange} />
+                            <label>Last Name</label>
+                            <input type="text" name="lname" autoComplete="off" value={lname} onChange={this.handleChange} />
 
-                    <label>Password</label>
-                    <input type="text" name="password" autoComplete="off" value={password} onChange={this.handleChange} />
+                            <label>email</label>
+                            <input type="text" name="email" autoComplete="off" value={email} onChange={this.handleChange} />
+
+                            <label>Password</label>
+                            <input type="text" name="password" autoComplete="off" value={password} onChange={this.handleChange} />
+                        </Segment>
+                        
+                    </Form>
+                <Message>
+                    <a href='#' onClick={this.props.handleClick}> Sign Up </a> as Instructor
+                </Message>
                     
-                </form>
-            <Message>
-                <a href='#' onClick={this.props.handleClick}> Sign Up </a> as Instructor
-            </Message>
-                
-            </div>
+                </div>
+            </Grid>
         )
     }
 }

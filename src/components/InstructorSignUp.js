@@ -37,38 +37,43 @@ class InstructorSignUp extends React.Component {
         const { username, avatar, fname, lname, password, bio, email } = this.state
         
         return(
-            <div>
-            <form onSubmit ={this.handleSubmit}>
-                <label>Username</label>
-                <input type="text" name="username" autoComplete="off" value={username} onChange={this.handleChange} />
+            <Grid textAlign="center" style={{ height: `100vh` }} verticalAlign="middle">
+                <div>
+                    <Form size='large' style={{maxWidth: 600}} onSubmit={this.handleSubmit}>
+                        <Segment stacked>
 
-                <label>Profile Image</label>
-                <input type="text" name="avatar" autoComplete="off" value={avatar} onChange={this.handleChange} />
+                            <label>Username</label>
+                            <input type="text" name="username" autoComplete="off" value={username} onChange={this.handleChange} />
 
-                <img src={avatar.length ? avatar : "https://www.mtsolar.us/wp-content/uploads/2020/04/avatar-placeholder.png"} alt={username} />
+                            <label>Profile Image</label>
+                            <input type="text" name="avatar" autoComplete="off" value={avatar} onChange={this.handleChange} />
 
-                <label>First Name</label>
-                <input type="text" name="fname" autoComplete="off" value={fname} onChange={this.handleChange} />
+                            <img src={avatar.length ? avatar : "https://www.mtsolar.us/wp-content/uploads/2020/04/avatar-placeholder.png"} alt={username} />
 
-                <label>Last Name</label>
-                <input type="text" name="lname" autoComplete="off" value={lname} onChange={this.handleChange} />
+                            <label>First Name</label>
+                            <input type="text" name="fname" autoComplete="off" value={fname} onChange={this.handleChange} />
 
-                <label>E-mail</label>
-                <input type="text" name="email" autoComplete="off" value={email} onChange={this.handleChange} />
+                            <label>Last Name</label>
+                            <input type="text" name="lname" autoComplete="off" value={lname} onChange={this.handleChange} />
 
-                <label>Bio</label>
-                <input type="text" name="bio" autoComplete="off" value={bio} onChange={this.handleChange} />
+                            <label>E-mail</label>
+                            <input type="text" name="email" autoComplete="off" value={email} onChange={this.handleChange} />
 
-                <label>Password</label>
-                <input type="text" name="password" autoComplete="off" value={password} onChange={this.handleChange} />
-                
-            </form>
+                            <label>Bio</label>
+                            <input type="text" name="bio" autoComplete="off" value={bio} onChange={this.handleChange} />
 
-            <Message>
-                <a href='#' onClick={this.props.handleClick}> Sign Up </a> as New User
-            </Message>
-                
-            </div>
+                            <label>Password</label>
+                            <input type="text" name="password" autoComplete="off" value={password} onChange={this.handleChange} />
+                        </Segment>
+                        
+                    </Form>
+
+                <Message>
+                    <a href='#' onClick={this.props.handleClick}> Sign Up </a> as New User
+                </Message>
+                    
+                </div>
+            </Grid>
         )
     }
 }

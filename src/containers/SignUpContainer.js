@@ -1,34 +1,46 @@
 import React from 'react'
 import UserSignUp from '../components/UserSignUp'
 import InstructorSignUp from '../components/UserSignUp'
+import { Button, Form, Grid, Header, Message, Segment, Row} from 'semantic-ui-react'
+
 
 
 class SignUpContainer extends React.Component {
     state = {
-        newUser: false
+        instructor: true
     }
 
     handleClick = () => {
         this.setState({
-            newUser: !this.state.newUser
+            instructor: !this.state.instructor
         })
     }
 
     render(){
+        console.log(this.state.instructor)
         return (
             <div>
-                <h1>Sign Up</h1>
-                { this.state.newUser ? 
-                <UserSignUp 
-                    loginHandler={this.props.loginHandler}
-                    handleClick={this.handleClick}
-                    />
+                { this.state.instructor ? 
+                <>
+                    <h1>Sign Up</h1>
+                    <InstructorSignUp 
+                        loginHandler={this.props.loginHandler}
+                        handleClick={this.handleClick}
+                        />
+                </>
                     :
-                <InstructorSignUp 
-                    loginHandler={this.props.loginHandler}
-                    handleClick={this.handleClick}
-                    />
+                <>
+                    <h1>Create Account</h1>
+                    <UserSignUp 
+                        loginHandler={this.props.loginHandler}
+                        handleClick={this.handleClick}
+                        />
+                </>
+
                 }
+                <Message>
+                    Already have an account? <a href='#' onClick={this.props.handleClick}> Login </a>
+                </Message>
             </div>
         )
     }
